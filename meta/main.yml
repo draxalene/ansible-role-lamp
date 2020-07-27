@@ -1,0 +1,29 @@
+galaxy_info:
+  role_name: lamp
+  author: Joffrey Skandera
+  description: Hopla.cloud role for ansible to install a lamp server
+  company: hopla.cloud
+  license: GPLv3
+
+  min_ansible_version: 2.9
+
+  platforms:
+    - name: Ubuntu
+      versions:
+        - bionic
+        - xenial
+  galaxy_tags:
+    - web
+    - php
+    - fpm
+    - mariadb
+
+dependencies:
+    - hoplacloud.linux_update
+    - hoplacloud.linux_motd
+    - hoplacloud.linuxbase
+    - hoplacloud.apache_php
+    - hoplacloud.fail2ban
+    - hoplacloud.proftpd
+    - hoplacloud.postfix
+    - geerlingguy.mysql

@@ -1,0 +1,4 @@
+---
+# tasks file for hoplacloud.lamp
+- name: No RedHat tasks
+  fail:
