@@ -47,5 +47,5 @@
           - python3-pymysql
       when: "'mariadb-server' in mysql_packages and 'bionic' in ansible_distribution_release"
   roles:
-    - hoplacloud.apache_php
+    - hoplacloud.lamp
     - geerlingguy.mysql
