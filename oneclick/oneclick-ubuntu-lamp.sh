@@ -32,4 +32,4 @@ ansible-galaxy install geerlingguy.mysql
 echo "- hoplacloud.lamp (${currdate})" >> /etc/hopla.cloud-roles
 
 # Install oneclick app
-ansible-playbook /root/.ansible/roles/hoplacloud.apache_php/playbooks/apache_php_mariadb.yml
+ansible-playbook /root/.ansible/roles/hoplacloud.lamp/playbooks/hoplacloud_lamp.yml
