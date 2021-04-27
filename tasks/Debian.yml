@@ -21,26 +21,3 @@
     dest: /root/Oneclick-wp-{{ ansible_date_time.date }}-{{ ansible_date_time.time }}.txt
     owner: root
     group: root
-
-- name: Display root password in case of mail delivery failure
-  debug:
-    msg: root password is {{ root_password }}
-
-- name: Sending end of provisionning Email to user
-  mail:
-    host: localhost
-    port: 25
-    to: "{{ user_email }}"
-    subject: "hopla.cloud : 👏 Votre {{ app_name }} vous attend !"
-    subtype: "html"
-    secure: "never"
-    body: '
-    <p>
-    {{ app_name }}<br>
-    Acces SSH <br>
-    IPv4: {{ ansible_default_ipv4.address }}<br>
-    IPv6: {{ ansible_default_ipv6.address }}<br>
-    Utilisateur: root<br>
-    Mot de passe: {{ root_password }} <br>
-    </p>
-    '
