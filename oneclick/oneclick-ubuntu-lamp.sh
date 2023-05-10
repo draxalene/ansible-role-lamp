@@ -19,8 +19,6 @@ export HOME=/root
 currdate=$(date +%F)
 
 # Install ansible
-# For ubuntu 18.04
-DEBIAN_FRONTEND=noninteractive add-apt-repository ppa:ansible/ansible
 apt update
 DEBIAN_FRONTEND=noninteractive apt install ansible -y --allow-yes true
 
@@ -30,6 +28,7 @@ ansible-galaxy install geerlingguy.mysql
 
 # Write roles
 echo "- hoplacloud.lamp (${currdate})" >> /etc/hopla.cloud-roles
+echo "- geerlingguy.mysql (${currdate})" >> /etc/hopla.cloud-roles
 
 # Install oneclick app
 ansible-playbook /root/.ansible/roles/hoplacloud.lamp/playbooks/hoplacloud_lamp.yml --extra-vars "$1"
