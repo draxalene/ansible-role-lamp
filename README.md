@@ -24,7 +24,6 @@ Dependencies
 - draxalene.linux_motd
 - draxalene.apache-php
 - draxalene.fail2ban
-- draxalene.vhostdeploy_apache
 - draxalene.proftpd
 - draxalene.postfix
 - geerlingguy.mysql
