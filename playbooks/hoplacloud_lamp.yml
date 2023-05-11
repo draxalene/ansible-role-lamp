@@ -37,7 +37,7 @@
         filename: MariaDB
       when: "'mariadb-server' in mysql_packages and 'focal' in ansible_distribution_release"
 
-     - name: Add mariadb Repository Ubuntu 22.04
+    - name: Add mariadb Repository Ubuntu 22.04
       apt_repository:
         repo: "deb https://sfo1.mirrors.digitalocean.com/mariadb/repo/10.5/ubuntu jammy main"
         state: present
