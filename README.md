@@ -1,12 +1,14 @@
 Role Name
 =========
+draxalene.lamp
 
-Hopla.cloud role for ansible to install a simple LAMP server.
+
+Draxalene role for ansible to install a simple LAMP server. (by hopla.cloud)
 
 Requirements
 ------------
 
-Ubuntu 18.04
+Ubuntu 18.04 or +
 
 Role Variables
 --------------
@@ -18,13 +20,13 @@ php_version "x.x"
 Dependencies
 ------------
 
-- hoplacloud.linux_update
-- hoplacloud.linux_motd
-- hoplacloud.apache-php
-- hoplacloud.fail2ban
-- hoplacloud.vhostdeploy_apache
-- hoplacloud.proftpd
-- hoplacloud.postfix
+- draxalene.linux_update
+- draxalene.linux_motd
+- draxalene.apache-php
+- draxalene.fail2ban
+- draxalene.vhostdeploy_apache
+- draxalene.proftpd
+- draxalene.postfix
 - geerlingguy.mysql
 
 
@@ -34,7 +36,7 @@ Example Playbook
     - hosts: localhost
       remote_user: root
       roles:
-         - hoplacloud.lamp
+         - draxalene.lamp
 
 License
 -------
@@ -44,4 +46,4 @@ GPLv3
 Author Information
 ------------------
 
-Joffrey Skandera for [hopla.cloud](https://hopla.cloud)
+Alexandre MOREAU by hopla.cloud
