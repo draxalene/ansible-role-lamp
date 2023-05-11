@@ -1,7 +1,7 @@
 galaxy_info:
-  role_name: lamp
-  author: Joffrey Skandera
-  description: Hopla.cloud role for ansible to install a lamp server
+  role_name: linuxbase
+  author: draxalene
+  description: draxalene role for ansible to set a minimal configration for linux systems (by hopla.cloud)
   company: hopla.cloud
   license: GPLv3
 
@@ -12,11 +12,15 @@ galaxy_info:
       versions:
         - bionic
         - xenial
+        - jammy
   galaxy_tags:
     - web
     - php
     - fpm
     - mariadb
+    - linux
+    - draxalene
+    - hopla.cloud
 
 dependencies:
     - hoplacloud.linux_update
