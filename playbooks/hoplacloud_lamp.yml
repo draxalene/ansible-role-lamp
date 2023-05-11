@@ -19,6 +19,10 @@
       shell: "apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 F1656F24C74CD1D8"
       when: "'mariadb-server' in mysql_packages and 'focal' in ansible_distribution_release"
 
+    - name: Add mariadb Repository Key Ubuntu 22.04
+      shell: "apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 F1656F24C74CD1D8"
+      when: "'mariadb-server' in mysql_packages and 'jammy' in ansible_distribution_release"
+      
     - name: Add mariadb Repository Ubuntu 18.04
       apt_repository:
         repo: "deb https://sfo1.mirrors.digitalocean.com/mariadb/repo/10.5/ubuntu bionic main"
@@ -32,13 +36,13 @@
         state: present
         filename: MariaDB
       when: "'mariadb-server' in mysql_packages and 'focal' in ansible_distribution_release"
-
-    - name: Set fact for python mysql Ubuntu 20.04
-      set_fact:
-        mysql_python_package_debian:
-          - python3-mysqldb
-          - python3-pymysql
-      when: "'mariadb-server' in mysql_packages and 'focal' in ansible_distribution_release"
+      
+     - name: Add mariadb Repository Ubuntu 22.04
+      apt_repository:
+        repo: "deb https://sfo1.mirrors.digitalocean.com/mariadb/repo/10.5/ubuntu jammy main"
+        state: present
+        filename: MariaDB
+      when: "'mariadb-server' in mysql_packages and 'jammy' in ansible_distribution_release"
 
     - name: Set fact for python mysql Ubuntu 18.04
       set_fact:
@@ -46,6 +50,21 @@
           - python-mysqldb
           - python3-pymysql
       when: "'mariadb-server' in mysql_packages and 'bionic' in ansible_distribution_release"
+
+    - name: Set fact for python mysql Ubuntu 20.04
+      set_fact:
+        mysql_python_package_debian:
+          - python3-mysqldb
+          - python3-pymysql
+      when: "'mariadb-server' in mysql_packages and 'focal' in ansible_distribution_release"
+      
+     - name: Set fact for python mysql Ubuntu 22.04
+      set_fact:
+        mysql_python_package_debian:
+          - python-mysqldb
+          - python3-pymysql
+      when: "'mariadb-server' in mysql_packages and 'jammy' in ansible_distribution_release"
+ 
   roles:
-    - hoplacloud.lamp
+    - draxalene.lamp
     - geerlingguy.mysql
