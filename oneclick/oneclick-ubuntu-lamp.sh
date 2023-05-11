@@ -31,4 +31,4 @@ echo "- draxalene.lamp (${currdate})" >> /etc/hopla.cloud-roles
 echo "- geerlingguy.mysql (${currdate})" >> /etc/hopla.cloud-roles
 
 # Install oneclick app
-ansible-playbook /root/.ansible/roles/hoplacloud.lamp/playbooks/hoplacloud_lamp.yml --extra-vars "$1"
+ansible-playbook /root/.ansible/roles/draxalene.lamp/playbooks/hoplacloud_lamp.yml --extra-vars "$1"
