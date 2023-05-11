@@ -1,5 +1,5 @@
 galaxy_info:
-  role_name: linuxbase
+  role_name: lamp
   author: draxalene
   description: draxalene role for ansible to set a minimal configration for linux systems (by hopla.cloud)
   company: hopla.cloud
