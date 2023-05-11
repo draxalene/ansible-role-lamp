@@ -58,7 +58,7 @@
           - python3-pymysql
       when: "'mariadb-server' in mysql_packages and 'focal' in ansible_distribution_release"
 
-     - name: Set fact for python mysql Ubuntu 22.04
+    - name: Set fact for python mysql Ubuntu 22.04
       set_fact:
         mysql_python_package_debian:
           - python-mysqldb
