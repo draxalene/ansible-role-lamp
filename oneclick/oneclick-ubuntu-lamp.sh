@@ -23,11 +23,11 @@ apt update
 DEBIAN_FRONTEND=noninteractive apt install ansible -y --allow-yes true
 
 # Install hoplacloud roles
-ansible-galaxy install hoplacloud.lamp
+ansible-galaxy install draxalene.lamp
 ansible-galaxy install geerlingguy.mysql
 
 # Write roles
-echo "- hoplacloud.lamp (${currdate})" >> /etc/hopla.cloud-roles
+echo "- draxalene.lamp (${currdate})" >> /etc/hopla.cloud-roles
 echo "- geerlingguy.mysql (${currdate})" >> /etc/hopla.cloud-roles
 
 # Install oneclick app
